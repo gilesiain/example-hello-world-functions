@@ -1,4 +1,4 @@
-import * as axios from 'https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js'
+import * as axios from ('https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js')
 
 const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/todos/1'
 

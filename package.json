@@ -4,6 +4,10 @@
     "type": "module",
     "description": "A site to show a hello world example of using Netlify Functions",
     "author": "Netlify",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+    "axios": "^0.20.0",
+    "crypto-js": "^4.0.0"
+  }
 }
 

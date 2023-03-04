@@ -4,7 +4,7 @@
 // I'll get deployed to AWS Lambda, but you don't need to know that. 
 // You can develop and deploy serverless functions right here as part
 // of your site. Netlify Functions will handle the rest for you.
-
+const fetch = require('node-fetch')
 
 exports.handler = async event => {
     const options = {

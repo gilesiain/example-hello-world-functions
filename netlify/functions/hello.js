@@ -1,26 +1,24 @@
+// import fetch from 'node-fetch';
 const fetch = require('node-fetch')
 
-const API_ENDPOINT = 'https://cat-fact.herokuapp.com/facts'
-
-exports.handler = async (event, context) => {
-  let response
-  try {
-    response = await fetch(API_ENDPOINT)
-    // handle response
-  } catch (err) {
-    return {
-      statusCode: err.statusCode || 500,
-      body: JSON.stringify({
-        error: err.message
-      })
-    }
-  }
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      data: response
-    })
+const checkStatus = (res) => {
+  if (res.ok) { // res.status >= 200 && res.status < 300
+      return res.json()
+  } else {
+      throw new Error(res.statusText);
   }
 }
 
+exports.handler = async function(event, context, callback) {
+  try {
+    const response = await fetch('https://cat-fact.herokuapp.com/facts')
+    const data = await checkStatus(response)
+    callback(null, {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+  } catch (error) {
+    callback(error)
+  }
+}

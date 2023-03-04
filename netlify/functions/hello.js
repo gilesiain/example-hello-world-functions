@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
       },
       {
         headers: {
-          Authorization: 'Bearer ${apiKey}',
+          Authorization: `Bearer ${apiKey}`,
           'Content-Type': 'application/json'
         }
       }

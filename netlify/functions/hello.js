@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const apiKey = process.env.MY_API_KEY;
+
 exports.handler = async (event, context) => {
   
   try {
@@ -10,7 +12,7 @@ exports.handler = async (event, context) => {
       },
       {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3hhdGEuaW8iLCJzdWIiOiJ1c3JfZ2ttMDBlcWw2dDdrMWNvcjd0OHJtMW82YzQiLCJleHAiOjE2Nzc5Njg4NjIsImlhdCI6MTY3Nzk2Nzk2Miwid29ya3NwYWNlcyI6eyI4OW42NWciOnsicm9sZSI6Im93bmVyIn19fQ.WklRAugGyb1u2eqUd6YAz-vCPN2vAc3z1W9YpttP3_URIxShVkZDh1HwRlEu_0oCJmXg5Vx3tST1V1H6abVJAA',
+          Authorization: 'Bearer ${apiKey}',
           'Content-Type': 'application/json'
         }
       }

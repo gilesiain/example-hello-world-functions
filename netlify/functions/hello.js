@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
     const response = await axios.post(
       'https://iain-giles-s-workspace-89n65g.eu-west-1.xata.sh/db/deadly:main/tables/Users/query',
       {
-        page: { size: 15 }
+        page: { size: 2 }
       },
       {
         headers: {

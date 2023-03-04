@@ -7,9 +7,20 @@
 
 
 exports.handler = async event => {
-    const subject = event.queryStringParameters.name || 'World'
+    const options = {
+  method: 'POST',
+  headers: {Authorization: 'Bearer xau_HYYuCnlGvu8BMIWTOD2eMPiUWLSipIx04', 'Content-Type': 'application/json'},
+  body: '{"page":{"size":15}}'
+};
+
+fetch('https://iain-giles-s-workspace-89n65g.eu-west-1.xata.sh/db/deadly:main/tables/Users/query', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
     return {
         statusCode: 200,
         body: `Hello ${subject}!`,
     }
 }
+
+

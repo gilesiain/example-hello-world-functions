@@ -1,24 +1,24 @@
-// import fetch from 'node-fetch';
-const fetch = require('node-fetch')
+const axios = require('axios')
 
-const checkStatus = (res) => {
-  if (res.ok) { // res.status >= 200 && res.status < 300
-      return res.json()
-  } else {
-      throw new Error(res.statusText);
-  }
-}
+const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/todos/1'
 
-exports.handler = async function(event, context, callback) {
+exports.handler = async (event, context) => {
+  let response
   try {
-    const response = await fetch('https://cat-fact.herokuapp.com/facts')
-    const data = await checkStatus(response)
-    callback(null, {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+    response = await axios.get(API_ENDPOINT)
+  } catch (err) {
+    return {
+      statusCode: err.statusCode || 500,
+      body: JSON.stringify({
+        error: err.message
+      })
+    }
+  }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      data: response.data
     })
-  } catch (error) {
-    callback(error)
   }
 }

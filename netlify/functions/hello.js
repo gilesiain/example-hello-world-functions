@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const apiKey = process.env.MY_API_KEY;
-
 exports.handler = async (event, context) => {
+  
+  const apiKey = process.env.MY_API_KEY;
   
   try {
     const response = await axios.post(

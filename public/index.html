@@ -9,17 +9,21 @@
 </head>
 
 <body>
-    <div class="container">
-        
-        <h2>Examples</h2>
-        <ul>
-            <li><a href="/.netlify/functions/hello?name=you">Hello World</a> ( /.netlify/functions/hello?name=you )</li>
-            <li><a href="/api/hello?name=you">Hello World</a> ( /api/hello?name=you )</li>
-        </ul>
-
-
-      </div>
+    <H2> TESTING!!! </H2>
+   <p id="data-container"></p>
 
 </body>
+    
+    <script>
+        const dataContainer = document.getElementById("data-container");
+
+fetch("/.netlify/functions/hello")
+  .then((response) => response.json())
+  .then((data) => {
+    // update the contents of the <p> tag with the response data
+    dataContainer.innerText = JSON.stringify(data);
+  })
+  .catch((error) => console.error(error));
+    </script>
 
 </html>

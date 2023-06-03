@@ -63,3 +63,14 @@
 </body>
 
 </html>
+
+<script>
+        const dataContainer = document.getElementById("data-container");
+fetch("/.netlify/functions/hello")
+  .then((response) => response.json())
+  .then((data) => {
+    // update the contents of the <p> tag with the response data
+    dataContainer.innerText = JSON.stringify(data);
+  })
+  .catch((error) => console.error(error));
+    </script>

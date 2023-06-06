@@ -5,16 +5,6 @@
     src: url(/assets/fonts/PirataOne-Regular.ttf);
 }
 
-* {
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
- }
- 
-html {
-    margin: 0;
-    padding: 0;
-}
 
 body {
     margin: 0;
@@ -25,42 +15,39 @@ body {
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(74.19deg, #000000 8.22%, #272727 93.79%);
-
 }
 
 
 header {
     position: fixed;
     top: 0;
-    width: inherit;
     display: flex;
     align-items: center;
     height: 80px;
     padding: 0 4% 0 4%;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 20px+1rem, 3rem);
     font-family: oldenglish;
     letter-spacing: 1px;
     color: white;
 }
-
 header img {
-    height: 40px;
+    height: clamp(1rem, 40px, 3rem);
 }
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 100%;
     background-color: #020202;
     color: white;
+
 }
 
 footer div {
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    padding: 1% 4%;
+    padding: 0% 4%;
     font-size: .8rem;
 }
 
@@ -74,174 +61,106 @@ footer a:hover {
     opacity: 75%;
 }
 
-#mobilefooter {
-    display: none;
+#mobilefooter{
+    display:none;
 }
 
 
-main {
+main{
     width: 100%;
-    max-width: 100%;
-    display: flex;
     height: 100vh;
+    display: flex;
 }
 
-#main_left {
+main #main_left{
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    padding-left: 4%;
+    margin: 0 0 5% 10%;
+    padding: 0;
+    
 }
-
-#main_left h1 {
-    font-size: calc(4vw + 1.2rem);
-    color: white;
+main #main_left h1{
     font-family: oldenglish;
-    letter-spacing: 3px;
-    line-height: 1em;
-    width: 90%;
-}
-
-#main_left div {
-    background-color: white;
-    padding: 2% 4%;
-    width: 70%;
-    margin: 5% 20% 0 0;
-    min-width: 300px;
-}
-
-#main_left div p {
     width: 100%;
-}
-
-#main_left div button {
-    width: 100%;
-    height: 30%;
-    margin: 0;
-    margin-top: 5%;
-    padding: 4% 0 8% 0;
+    
     color: white;
-    font-weight: bold;
-    font-size: medium;
-    background: linear-gradient(0deg, #020202, #020202), linear-gradient(268.15deg, #2B2B2B 6.38%, #000000 94.58%);
-    border-radius: 4px;
-    cursor: pointer;
+    font-size: clamp(1rem, 4vw + 1rem, 5rem);
+    letter-spacing: 3px;
+    line-height: 1;
 }
-
-#main_left div button:hover {
+main #main_left button{
+    width:calc( 100% - 20px);
+    padding: 2.5%;
+    color: black;
     background: white;
-    border: #020202 solid 2px;
-    color: #020202;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    border: white solid 2px;
 }
 
-#main_right {
-    width: 50%;
-    height: 100%;
+
+main #main_right{
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#main_right img {
-    width: 80%;
-}
-
-
-@media only screen and (max-width: 768px) {
-    header {
-        top: unset;
-        position: sticky;
-        padding: 0;
-        margin: 0;
-        font-size: 1rem;
-        height: 50px;
-    }
-
-    header img {
-        height: 30px;
-        margin-left: 4%;
-    }
-
-    footer {
-        position: unset;
-        padding: 5% 0;
-        margin-top: 5%;
-        font-size: .8rem;
-        bottom: auto;
-    }
-
-    footer div {
-        display: none;
-    }
+    margin: 0% 10% 0 0;
     
+}
+main #main_right img{
+    width: 80%;
+    padding-bottom: 10%;
+}
 
-    #mobilefooter {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-between;
-        align-items: center;
-    }
-    #mobilefooter p{
-        margin-top: 4%;
-    }
 
-    main {
-        margin: 0 auto;
-        flex-direction: column-reverse;
-        padding: 4% 0 ;
+@media screen and (max-width: 450px) {
+    footer {
+        position: relative;
+        bottom: 0;
         width: 100%;
-        height: auto;
+        background-color: #020202;
+        color: white;
+        margin-top: 20%;
+        display:none;
     }
 
-    #main_left {
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        padding: 0;
-        margin: 0 auto;
-        
+    main{
+        flex-direction: column-reverse;
+        height: 100vh;
     }
 
-    #main_left h1 {
-        padding: 5% 0;
+    main #main_left{
+        width: 100%;
+        height: 35vh;
         margin: 0;
-        width: 100%;
-        font-size: 2.5rem;
+        padding: 0;
         text-align: center;
     }
-
-    #main_left div {
+    main #main_left h1{
+    }
+    main #main_left button{
+        width: 90%;
+        padding: 2.5%;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+    }
+    
+    
+    main #main_right{
         width: 100%;
-        padding: 4% ;
+        height: 65vh;
         margin: 0;
+        justify-content: flex-end;
     }
-
-    #main_left div p {
-        padding: 0;
-        margin: 0;
-        font-size: .9rem;
+    main #main_right img{
         width: 100%;
-    }
-
-    #main_left div button {
-        padding: 4%;
         margin: 0;
-        margin-top: 5%;
-    }
-
-    #main_right {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        
-
-    }
-
-    #main_right img {
-        padding: 0;
-        margin: 0 auto;
-        width: 70%;
+        padding: 0%;
+        padding-top: 0%;
     }
 }

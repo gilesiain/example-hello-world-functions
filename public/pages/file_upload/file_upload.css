@@ -1,0 +1,17 @@
+html,
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#renderCanvas {
+    margin-top: 5%;
+    width: 50vh;
+    height: 50%;
+    touch-action: none;
+    outline: black solid 3px;
+    border-radius: 2px;
+}

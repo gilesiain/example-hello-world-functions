@@ -5,7 +5,6 @@ exports.handler = async (event, context) => {
   const apiKey = process.env.xata_api_key;
   
   const options = {
-  method: 'POST',
   headers: {Authorization: `Bearer` + apiKey, 'Content-Type': 'application/json'},
   body: '{"name":"string","email":"a@b.com","bio":"longer text"}'
 };

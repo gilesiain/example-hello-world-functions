@@ -2,7 +2,7 @@ import axios from 'axios'
 
 exports.handler = async (event, context) => {
   
-  const apiKey = process.env.MY_API_KEY;
+  const apiKey = process.env.xata_API_KEY;
   
   try {
     const response = await axios.post(

@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
   
   const options = {
   method: 'POST',
-  headers: {Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json'},
+  headers: {Authorization: `Bearer` + apiKey, 'Content-Type': 'application/json'},
   body: '{"name":"string","email":"a@b.com","bio":"longer text"}'
 };
   

@@ -6,14 +6,15 @@ exports.handler = async (event, context) => {
   
   try {
     const response = await axios.post(
-      'https://iain-giles-s-workspace-89n65g.eu-west-1.xata.sh/db/deadly:main/tables/Users/query',
+      'https://iain-giles-s-workspace-89n65g.eu-west-1.xata.sh/db/deadly:main/tables/Users/data?columns=id',
       {
         page: { size: 2 }
       },
       {
         headers: {
           Authorization: `Bearer ${apiKey}`,
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          body: '{"name":"test","email":"a@b.com","bio":"longer text"}'
         }
       }
     );
